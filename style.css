@@ -1,0 +1,166 @@
+/* Config gerais e reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1A1A1A;
+    color: #F1FAEE;
+    font-family: 'Merriweather', serif; 
+}
+
+/* Componentes MOBILE FIRST */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    /* Organiza todos os componentes da header do site (posição, alinhamento e faz ele ficar a frente de outros elementos*/
+}
+
+
+.header-logo {
+    height: 40px;
+}
+
+.nav-links-desktop {
+    display: none; /* Esconde os links da header para o celular */
+}
+
+/* Estilo do botão de menu hambúrguer */
+.menu-hamburguer {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+}
+
+.hamburguer-barra {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #F1FAEE; /* Cor branca-gelo */
+    border-radius: 2px;
+}
+
+.hamburguer-barra::before,
+.hamburguer-barra::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #F1FAEE; /* Cor branca-gelo */
+    border-radius: 2px;
+}
+
+.hamburguer-barra::before {
+    top: -8px; /* Posição da barra de cima */
+}
+
+.hamburguer-barra::after {
+    bottom: -8px; /* Posição da barra de baixo */
+}
+
+/* secao hero */
+
+.secao-hero {
+    background-image: url('imgs/kratos hero.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10%;
+    /* Conteudo da secao hero com a alteração especifica de fazer o texto e o botao de adquirir agora ficarem mais a esquerda para aproveitar a imagem do kratos */
+}
+
+.btn-principal {
+    background-color: #AC2020;
+    color: #F1FAEE; 
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700; 
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 24px;
+    transition: all 0.3s ease;
+    /* Conteudo do botao principal */
+}
+
+.btn-principal:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+    /* Função muito legal que faz o botao aumentar o tamanho e o brilhor quando o mouse é passado acima dele */
+}
+
+
+/* Design para desktop */
+
+@media (min-width: 768px) {
+    /* Essa função é a principal para verificar se o menu sanduiche deve ou nao existir, caso a tela seja maior do que 768px de largura as configurações mudam para as de baixo */
+
+
+
+    .menu-hamburguer {
+        display: none;
+    }
+    /* Esconde o menu hamburguer no comp */
+    .nav-links-desktop {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .nav-links-desktop a {
+        color: #F1FAEE;
+        text-decoration: none;
+        font-family: 'Cinzel', serif;
+        font-size: 16px;
+        padding: 8px;
+        position: relative;
+    }
+    
+    .nav-links-desktop a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background: #AC2020;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links-desktop a:hover::after {
+        left: 0;
+        width: 100%;
+    }
+    /* Caracteristicas dos links da header, o efeito colocado foi de uma barra vermelha que aumenta com o passar do mouse (hovering) */
+
+    .btn-comprar-nav {
+        background-color: #AC2020;
+        padding: 10px 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-comprar-nav:hover {
+        filter: brightness(1.2);
+    }
+    /* Efeito parecido com o ultimo botao mas esse nao aumenta de tamanho */
+
+}
