@@ -28,18 +28,18 @@ body {
 
 
 .nav-links-desktop.ativo {
-    display: block; /* Faz o menu aparecer */
+    display: block;
     position: absolute;
-    top: 80px; /* Distância do topo */
-    right: 24px; /* Distância da direita */
-    background-color: #2A2A2A; /* Cor de fundo para o menu aberto */
+    top: 80px;
+    right: 24px;
+    background-color: #2A2A2A;
     width: 200px;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #AC2020; /* Borda vermelha temática */
+    border: 1px solid #AC2020;
 }
+/* Componentes do menu hamburguer */
 
-/* Faz os links dentro do menu ativo ficarem um embaixo do outro */
 .nav-links-desktop.ativo a {
     display: block;
     margin-bottom: 15px;
@@ -71,7 +71,7 @@ body {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: #F1FAEE; /* Cor branca-gelo */
+    background-color: #F1FAEE;
     border-radius: 2px;
 }
 
@@ -82,7 +82,7 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: #F1FAEE; /* Cor branca-gelo */
+    background-color: #F1FAEE;
     border-radius: 2px;
 }
 
@@ -129,7 +129,7 @@ body {
     /* Função muito legal que faz o botao aumentar o tamanho e o brilhor quando o mouse é passado acima dele */
 }
 
-/* -------------------- SEÇÃO SAGA (CARROSSEL) -------------------- */
+/* Seção jogos */
 
 .saga-container {
     padding: 48px 0; /* Espaçamento vertical para separar da seção Hero */
@@ -139,40 +139,38 @@ body {
     font-family: 'Cinzel', serif;
     font-size: 28px;
     text-align: center;
-    margin-bottom: 32px; /* Espaço entre o título e o carrossel */
+    margin-bottom: 32px;
 }
 
 .carrossel-jogos {
-    display: flex; /* Alinha os cards lado a lado */
-    overflow-x: auto; /* A MÁGICA: Cria a rolagem horizontal */
-    gap: 20px; /* Espaçamento entre os cards */
-    padding: 0 24px; /* Garante que o carrossel não comece colado na borda */
-
-    /* (Bônus) Efeito de "imã" para a rolagem, fica muito profissional */
+    display: flex;
+    overflow-x: auto; /* Cria a rolagem horizontal */
+    gap: 20px; 
+    padding: 0 24px; 
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
-    -ms-overflow-style: none; /* Esconde a barra de rolagem no IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
 
-/* Esconde a barra de rolagem no Chrome/Safari/Opera */
 .carrossel-jogos::-webkit-scrollbar {
     display: none;
 }
+/* Esconde a barra de rolagem */
 
 .card-jogo {
-    /* Garante que os cards não encolham e mantenham o tamanho definido */
-    flex: 0 0 70%; /* Cada card ocupará 70% da largura da tela */
-    background-color: #2A2A2A; /* Um cinza um pouco mais claro para o card */
+    flex: 0 0 70%;
+    background-color: #2A2A2A;
     border: 1px solid #444;
     border-radius: 8px;
-    overflow: hidden; /* Garante que a imagem com cantos retos não vaze dos cantos arredondados */
-    scroll-snap-align: start; /* Para o efeito de "imã" funcionar */
+    overflow: hidden;
+    scroll-snap-align: start;
 }
 
 .card-jogo-imagem {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    object-position: top;
     display: block;
 }
 
@@ -201,6 +199,104 @@ body {
 .btn-detalhes:hover {
     background-color: #AC2020;
     color: white;
+}
+
+/* Seção dos personagens */
+.personagens-container {
+    padding: 48px 0;
+}
+
+.personagens-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.carrossel-personagens {
+    display: flex;
+    overflow-x: auto;
+    gap: 24px;
+    padding: 0 24px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carrossel-personagens::-webkit-scrollbar {
+    display: none;
+}
+
+.card-personagem {
+    flex: 0 0 140px; 
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+.personagem-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Isso transforma o quadrado em um círculo perfeito */
+    overflow: hidden;
+    border: 2px solid #AC2020;
+    margin-bottom: 16px;
+}
+
+.freya-avatar-pos {
+    object-position: 50% 10%; /* Ajuste o segundo valor! */
+}
+.personagem-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher o circulo */
+}
+
+.personagem-nome {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+}
+
+/* footer */
+
+.footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid #333; 
+    margin-top: 64px;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.footer-logos img {
+    height: 40px;
+}
+
+.footer-social img {
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+
+.footer-social img:hover {
+    opacity: 1;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto 32px auto;
+}
+
+.rating-logo {
+    height: 60px;
 }
 
 /* Design para desktop */
@@ -258,4 +354,38 @@ body {
     }
     /* Efeito parecido com o ultimo botao mas esse nao aumenta de tamanho */
 
+    .saga-container {
+        padding: 64px 80px;
+    }
+
+    .carrossel-jogos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: hidden;
+        scroll-snap-type: none;
+    }
+
+    .card-jogo {
+        flex: none; 
+        width: 100%;
+    }
+    .carrossel-personagens {
+        overflow-x: hidden;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .card-personagem {
+        flex-basis: 160px;
+    }
+
+    .personagem-avatar {
+        width: 160px;
+        height: 160px;
+    }
+
+    .personagem-nome {
+        font-size: 18px;
+    }
 }
+
