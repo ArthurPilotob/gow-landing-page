@@ -12,21 +12,22 @@ body {
 }
 
 /* Componentes MOBILE FIRST */
-
+/* Organiza todos os componentes da header do site (posição, alinhamento e faz ele ficar a frente de outros elementos*/
+/* A atribuição de uma classe permite altera-la no css */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px;
-    position: absolute;
+    position: fixed;
+    background-color: #1A1A1A;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-    /* Organiza todos os componentes da header do site (posição, alinhamento e faz ele ficar a frente de outros elementos*/
 }
 
-
+/* Componentes do menu hamburguer */
 .nav-links-desktop.ativo {
     display: block;
     position: absolute;
@@ -38,7 +39,6 @@ body {
     border-radius: 8px;
     border: 1px solid #AC2020;
 }
-/* Componentes do menu hamburguer */
 
 .nav-links-desktop.ativo a {
     display: block;
@@ -50,9 +50,9 @@ body {
 }
 
 .nav-links-desktop {
-    display: none; /* Esconde os links da header para o celular */
+    display: none; /* Esconde o menu hamburguer para celular */
 }
-    .nav-links-desktop.ativo a {
+.nav-links-desktop.ativo a {
     color: #F1FAEE;
     text-decoration: none;
 }
@@ -87,11 +87,11 @@ body {
 }
 
 .hamburguer-barra::before {
-    top: -8px; /* Posição da barra de cima */
+    top: -8px;
 }
 
 .hamburguer-barra::after {
-    bottom: -8px; /* Posição da barra de baixo */
+    bottom: -8px;
 }
 
 /* secao hero */
@@ -106,6 +106,38 @@ body {
     align-items: center;
     padding-left: 10%;
     /* Conteudo da secao hero com a alteração especifica de fazer o texto e o botao de adquirir agora ficarem mais a esquerda para aproveitar a imagem do kratos */
+}
+
+.botoes-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    align-items: center;
+}
+
+.botoes-compra .btn-principal,
+.botoes-compra .btn-secundario {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 16px;
+    font-size: 14px;
+    text-align: center;
+}
+.btn-secundario {
+    color: #F1FAEE; 
+    background-color: transparent;
+    border: 2px solid #AC2020;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700; 
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 24px;
+    transition: all 0.3s ease;
+    /* Conteudo do botão secundario (Compra para pc) */
 }
 
 .btn-principal {
@@ -128,11 +160,10 @@ body {
     transform: scale(1.05);
     /* Função muito legal que faz o botao aumentar o tamanho e o brilhor quando o mouse é passado acima dele */
 }
-
 /* Seção jogos */
 
 .saga-container {
-    padding: 48px 0; /* Espaçamento vertical para separar da seção Hero */
+    padding: 48px 0;
 }
 
 .saga-titulo {
@@ -226,8 +257,9 @@ body {
 .carrossel-personagens::-webkit-scrollbar {
     display: none;
 }
-
+/* Essa pequena linha de codigo faz a barra de scrollar nao aparecer, poluindo menos a tela */
 .card-personagem {
+    position: relative;
     flex: 0 0 140px; 
     text-align: center;
     scroll-snap-align: start;
@@ -256,7 +288,75 @@ body {
     font-size: 16px;
 }
 
-/* footer */
+.personagem-descricao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #F1FAEE;
+    padding: 10px 5px;
+    font-size: 14px;
+    opacity: 0; /* ESCONDIDO POR PADRÃO */
+    transform: translateY(100%);
+    transition: all 0.3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.card-personagem:hover .personagem-descricao {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.card-personagem:hover .personagem-imagem {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
+}
+
+
+/* Epilogo */
+.secao-final {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imgs/Kratos e Atreus 4k.png');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    
+    min-height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 48px 24px;
+}
+
+.secao-final-conteudo {
+    max-width: 90%; 
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.secao-final-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+
+.secao-final-sinopse {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+/* Rodapé */
 
 .footer {
     padding: 48px 24px;
@@ -297,6 +397,75 @@ body {
 
 .rating-logo {
     height: 60px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+
+.modal.ativo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-thumbnail {
+    width: 100%;
+    height: 200px;
+    
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+
+.modal-video-container a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+.modal-video-container a::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px 15px 10px 18px;
+    pointer-events: none;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: none;
+    border: none;
+    color: #F1FAEE;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 110;
+    transition: color 0.3s ease;
+}
+
+.btn-fechar:hover {
+    color: #AC2020;
 }
 
 /* Design para desktop */
@@ -386,6 +555,57 @@ body {
 
     .personagem-nome {
         font-size: 18px;
+    }
+
+
+    .modal-content {
+        position: relative;
+        padding: 20px;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .secao-final {
+        justify-content: flex-start;
+        padding-left: 10%;
+        text-align: left;
+    }
+
+    .secao-final-conteudo {
+        max-width: 500px;
+        text-align: left;
+    }
+
+    .secao-final-titulo {
+        font-size: 48px;
+    }
+    .secao-final-sinopse {
+        font-size: 20px;
+    }
+    .footer {
+        padding: 64px 80px; /* Aumenta o espaçamento */
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between; /* Coloca os itens nas extremidades */
+        align-items: center;
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+    .footer-social img {
+        height: 32px;
+    }
+
+
+    .footer-logos img {
+        height: 50px;
+    }
+
+    .rating-logo {
+        height: 70px;
+    }
+    .footer-logos, .footer-social, .copyright {
+        margin-bottom: 0;
     }
 }
 

@@ -11,31 +11,38 @@
 </head>
 <body>
     <header class ="header">
-        <a href = "#">
+        <a href="#hero">
+            <!-- O href com # faz o user ser levado exatamente a cada lugar da página puxando sempre pelo id dela, economizando tempo rolando -->
             <img src="imgs/gow logo.png" alt="Logo de God of War" class="header-logo">
-        </a>
-        
+            </a>
         <nav class ="navbar">
             <button class="menu-hamburguer" id="menu-hamburguer" aria-label="Abrir menu">
     <span class="hamburguer-barra"></span>
 </button>
-            </button>
             <div class ="nav-links-desktop" id="nav-links">
                 <a href="#saga">A Saga</a>
                 <a href="#personagens">Personagens</a>
+                <a href="#epilogo">Epílogo</a>
                 <a href="#contato">Contato</a>
-                <a href="#" class="btn-comprar-nav">Adquirir Agora</a>
+                <a href="https://store.playstation.com/pt-br/product/UP9000-CUSA07408_00-00000000GODOFWAR" class="btn-comprar-nav">Adquirir Agora</a>
             </div>
         </nav>
         <!-- A função do nav é guardar os links do site sendo a abreviação de navigation -->
     </header>
-    <!--Caracteristicas da header, com a logo e o menu sanduiche que na versão desktop fica no topo do site-->
+    <!--Caracteristicas da header, com a logo e o menu hamburguer que na versão desktop não existe-->
     <main>
         <section class="secao-hero" id="hero">
             <div class="hero-conteudo">
                 <h1 class="hero-titulo">A REDENÇÃO DE KRATOS</h1>
-                <a href="#" class="btn-principal">Adquirir Agora</a>
-            </div>
+
+                <div class="botoes-compra">
+                    <a href="https://store.playstation.com/pt-br/product/UP9000-CUSA07408_00-00000000GODOFWAR" target="_blank" class="btn-principal">
+                        Comprar para PlayStation
+                    </a>
+                    <a href="https://store.steampowered.com/app/1593500/God_of_War/" target="_blank" class="btn-secundario">
+                        Comprar para PC
+                    </a>
+                </div>
         </section>
         <!-- Seção hero, a maior e com a img de kratos ao fundo -->
 
@@ -50,6 +57,7 @@
             <div class="card-jogo-conteudo">
                 <h3 class="card-jogo-titulo">God of War (2005)</h3>
                 <a href="#" class="btn-detalhes" data-modal-id="gow2005">Ver detalhes</a>
+                <!-- O data-modal-id é o que torna possível a ligação com o codigo em js -->
             </div>
         </article>
 
@@ -83,6 +91,11 @@
                 <img src="imgs/kratos card.jpg" alt="Retrato de Kratos" class="personagem-imagem">
             </div>
             <h4 class="personagem-nome">Kratos</h4>
+
+                <div class="personagem-descricao">
+        <p>O Fantasma de Esparta</p>
+        <!-- Essas descrições apareceram apenas se o user passar o mouse -->
+    </div>
         </article>
 
         <article class="card-personagem">
@@ -90,6 +103,10 @@
                 <img src="imgs/atreus.jpg" alt="Retrato de Atreus" class="personagem-imagem">
             </div>
             <h4 class="personagem-nome">Atreus</h4>
+
+                <div class="personagem-descricao">
+        <p>O Filho de Kratos</p>
+    </div>
         </article>
 
         <article class="card-personagem">
@@ -98,6 +115,10 @@
                 <!-- Freya possui uma classe a mais pois sua foto não estava bem centralizada então tive que tratar no css -->
             </div>
             <h4 class="personagem-nome">Freya</h4>
+
+                <div class="personagem-descricao">
+        <p>A Bruxa do Bosque</p>
+    </div>
         </article>
         
         <article class="card-personagem">
@@ -105,6 +126,10 @@
                 <img src="imgs/brok e sindri.jpeg" alt="Retrato dos Anões" class="personagem-imagem">
             </div>
             <h4 class="personagem-nome">Anões</h4>
+
+                <div class="personagem-descricao">
+        <p>Os Anões Ferreiros</p>
+    </div>
         </article>
         
         <article class="card-personagem">
@@ -112,34 +137,117 @@
                 <img src="imgs/baldur.jpeg" alt="Retrato de Baldur" class="personagem-imagem">
             </div>
             <h4 class="personagem-nome">Baldur</h4>
+
+                <div class="personagem-descricao">
+        <p>O Estranho...</p>
+    </div>
+
+        </article>
+                <article class="card-personagem">
+            <div class="personagem-avatar">
+                <img src="imgs/mimir.jpeg" alt="Retrato de Mimir" class="personagem-imagem">
+            </div>
+            <h4 class="personagem-nome">Mimir</h4>
+
+                <div class="personagem-descricao">
+        <p>O Homem Mais Inteligente Vivo</p>
+    </div>
         </article>
         
         </div> </section>
         <!-- Seção dos personagens com suas imagens, semelhante a de jogos -->
 
-        <footer class="footer" id="contato">
-
-    <div class="footer-content">
-        <div class="footer-logos">
-            <img src="imgs/play logo.png" alt="Logo da PlayStation Studios">
+    <section class="secao-final" id="epilogo">
+        
+        <div class="secao-final-conteudo">
+            <h2 class="secao-final-titulo">Um Novo Começo</h2>
+            <p class="secao-final-sinopse">
+                Depois da luta contra Zeus, Kratos acorda em terras gélidas e começa uma nova familia, contudo, a morte de sua esposa o leva a buscar o pico mais alto dos nove reinos. Kratos consiguirá superar seus desafios, ou mais uma vez ficará preso aos fantasmas do passado? Descubra em God of War
+                </p>
         </div>
+    </section>
+    </main>
+        <!-- Secao final -->
+<footer class="footer" id="contato">
+    <div class="footer-content"> <div class="footer-logos">
+            <img src="imgs/play logo.png" alt="Logo da PlayStation Studios">
 
         <div class="footer-social">
-            <a href="#" target="_blank"><img src="imgs/youtube.png" alt="YouTube"></a>
-            <a href="#" target="_blank"><img src="imgs/xwitter.png" alt="Twitter"></a>
-            <a href="#" target="_blank"><img src="imgs/insta.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/user/PlayStationBR" target="_blank"><img src="imgs/youtube.png" alt="YouTube"></a>
+            <a href="https://x.com/playstation" target="_blank"><img src="imgs/xwitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/playstation_br/?hl=pt-br" target="_blank"><img src="imgs/insta.png" alt="Instagram"></a>
         </div>
 
-        <p class="copyright">
-            © 2025 Sony Interactive Entertainment LLC. God of War is a registered trademark of Sony Interactive Entertainment LLC and related companies.
-        </p>
+        <div class="footer-bottom-wrapper"> <p class="copyright">
+                © 2025 Sony Interactive Entertainment LLC. God of War is a registered trademark of Sony Interactive Entertainment LLC and related companies.
+            </p>
+            <img src="imgs/18.png" alt="Classificação indicativa: 18 anos" class="rating-logo">
+        </div>
+    </div> </footer>
+<!-- O rodapé com os links para contato, classificação indicativa e redes socias, cada um com sua logo -->
 
-        <img src="imgs/18.png" alt="Classificação indicativa: 18 anos" class="rating-logo">
+    <div class="modal" id="gow2005">
+        <div class="modal-content">
+            <button class="btn-fechar" data-modal-close aria-label="Fechar modal">X</button>
+            
+            <div class="modal-video-container">
+                <a href="https://www.youtube.com/watch?v=jZkX3LJDeYQ" target="_blank" aria-label="Assistir trailer de God of War 2005">
+                <img src="imgs/god 1 trailer.jpg" alt="Miniatura do trailer de God of War 2005" class="modal-thumbnail">
+                </a>
+                </div>
+            
+            <h2 class="modal-titulo">God of War (2005)</h2>
+            
+            <p class="modal-sinopse">
+                No brutal mundo da mitologia grega, Kratos é o Fantasma de Esparta, um guerreiro mortal atormentado por pesadelos de um passado terrível que ele mesmNo brutal mundo da mitologia grega, Kratos é o Fantasma de Esparta, um guerreiro mortal atormentado por pesadelos de um passado terrível que ele mesmo forjou. Em busca de absolvição e do fim de seu sofrimento, ele aceita uma última e impossível missão dos deuses do Olimpo: caçar e matar aquele que eles não podem combater, seu antigo mestre, Ares.
+            </p>
+
+        </div>
     </div>
 
-</footer>
-<!-- A última seção com os links para contato, classificação indicativa e redes socias, cada um com sua logo -->
-    </main>
+        <div class="modal" id="gow2">
+        <div class="modal-content">
+            <button class="btn-fechar" data-modal-close aria-label="Fechar modal">X</button>
+            
+            <div class="modal-video-container">
+                <a href="https://www.youtube.com/watch?v=oe0OmX9hINA" target="_blank" aria-label="Assistir trailer de God of War 2">
+                <img src="imgs/god 2 trailer.jpeg" alt="Miniatura do trailer de God of War 2" class="modal-thumbnail">
+                </a>
+                </div>
+            
+            <h2 class="modal-titulo">God of War 2</h2>
+            
+            <p class="modal-sinopse">
+                Traído e assassinado por Zeus, Kratos, o novo Deus da Guerra, é resgatado do Submundo pelos Titãs.
+                Sua missão agora é desafiar o impossível: encontrar as lendárias Irmãs do Destino para viajar no tempo e reescrever o momento de sua morte, buscando uma vingança que abalará os alicerces do Olimpo.
+            </p>
+
+        </div>
+    </div>
+
+            <div class="modal" id="gow3">
+        <div class="modal-content">
+            <button class="btn-fechar" data-modal-close aria-label="Fechar modal">X</button>
+            
+            <div class="modal-video-container">
+                <a href="https://www.youtube.com/watch?v=og41UV4ktj4" target="_blank" aria-label="Assistir trailer de God of War 2005">
+                <img src="imgs/god 3 trailer.jpeg" alt="Miniatura do trailer de God of War 3" class="modal-thumbnail">
+                </a>
+                </div>
+            
+            <h2 class="modal-titulo">God of War 3</h2>
+            
+            <p class="modal-sinopse">
+                A vingança final de Kratos começa no topo do Monte Olimpo.
+                Liderando os Titãs em uma guerra total contra os deuses, sua fúria o leva a uma trilha de destruição, onde ele caça e aniquila todo o panteão grego, de Poseidon a Hades, em sua busca por um único alvo: Zeus.
+                Neste capítulo final e brutal da saga grega, Kratos busca não apenas a morte de seu pai, mas o fim da era dos deuses, não importa o custo para o mundo.
+            </p>
+
+            <a href="https://store.playstation.com/pt-br/product/UP9000-CUSA01623_00-0000GODOFWAR3PS4" class="btn-principal modal-btn">Adquirir Agora</a>
+        </div>
+    </div>
+    <!-- Seção dos modais dos jogos -->
     <script src="script.js"></script>
+    <!-- Puxa os meus scripts em java script -->
 </body>
 </html>
